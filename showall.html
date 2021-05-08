@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- Linking CSS and JS files -->
+      <link rel="stylesheet" href="screen.css"></link>
+      <script src="script.js" async></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+      <title>Kinza Haque - Final Project - Drizzle Recipe Book</title>
+    </head>
+    <body>
+
+        <!-- Navigation Bar -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">Breakfast</a>
+          <a href="#">Lunch</a>
+          <a href="#">Dinner</a>
+          <a href="#">Dessert</a>
+          <a href="#">Beverage</a>
+          <a href="#">Snack</a>
+        </div>
+
+        <div id="logonav">
+          <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; Menu</span>
+          <span id="showall" title="Show all recipes!"><img src="images/showall.png"></span>
+          <span id="addrecipe" title="Add a new recipe!"><a href="index.html"> <img src="images/add.png"></a></span>
+          <a href="index.html"><img id="logo"  src="images/drizzle logo.png"/></a>
+        </div>
+
+        <!-- Show all recipes -->
+      <div id="formdiv" class="container-fluid">
+
+          <!-- Filter by category -->
+          <div id="categoryfilter" class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="Choose one:">
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Beverage">Beverage</option>
+              <option value="Snack">Snack</option>
+            </select>
+            <input onclick="filter()" type="submit" value="Submit">
+          </div> 
+          
+        
+          <!-- Sort alphabetically -->
+          <span onclick=desortList() id="alphabet" title="Sort recipes alphabetically (Z-A)"><img src="images/desort.png"></span>            
+          <span onclick=sortList() id="alphabet" title="Sort recipes alphabetically (A-Z)"><img src="images/sort.png"></span>
+           <div id="id01">
+            <h3 id="title">Show all recipes:</h3>
+              
+              <!-- List recipes -->
+              <div class="Dinner" id="listrecipe">
+                <h4 id="foodname"> Simple BBQ Ribs </h4>
+                <h5> Description: </h5>
+                <p>Country-style ribs are cut from the loin, one of the leanest areas of pork. These ribs are seasoned, boiled until tender, then baked with your favorite barbeque sauce. That's it! Back to simplicity, back to the country life. Sigh.</p>
+                <img id="foodpic" src="uploads/bbqribs.jpg"/>
+                <h5>Category:</h5>
+                <p>Dinner</p>
+                <h5>Ingredients:</h5>
+                <p>2 ½ pounds country style pork ribs, 1 tablespoon garlic powder, 1 teaspoon ground black pepper, 2 tablespoons salt, 1 cup barbeque sauce</p>
+                <h5>Instructions:</h5>
+                <p>1.) Place ribs in a large pot with enough water to cover. Season with garlic powder, black pepper and salt. Bring water to a boil, and cook ribs until tender. <br> 2.) Preheat oven to 325 degrees F (165 degrees C). <br> 3.) Remove ribs from pot, and place them in a 9x13 inch baking dish. Pour barbeque sauce over ribs. Cover dish with aluminum foil, and bake in the preheated oven for 1 to 1 1/2 hours, or until internal temperature of pork has reached 160 degrees F (70 degrees C).</p>
+              </div>
+
+              <div class="Dessert" id="listrecipe">
+                <h4 id="foodname"> Christmas Wreath Cookies </h4>
+                <h5> Description: </h5>
+                <p>These Christmas wreaths are made using corn flakes and cinnamon candies. They're fun to make and eat. If the mixture is cooling too quickly, set the pan in a skillet with one inch of very hot water to keep the dough manageable.</p>
+                <img id="foodpic" src="uploads/1607325092197christmaswreathcookies.jpg"/>
+                <h5>Category:</h5>
+                <p>Dessert</p>
+                <h5>Ingredients:</h5>
+                <p>½ cup butter, 30 large marshmallows, 1 ½ teaspoons green food coloring, 1 teaspoon vanilla extract, 4 cups cornflakes cereal, 2 tablespoons cinnamon red hot candies</p>
+                <h5>Instructions:</h5>
+                <p>1.) Melt butter in a large saucepan over low heat. Add marshmallows, and cook until melted, stirring constantly. Remove from heat, and stir in the food coloring, vanilla, and cornflakes. <br> 2.) Quickly drop heaping tablespoonfuls of the mixture onto waxed paper, and form into a wreath shape with lightly greased fingers. Immediately decorate with red hot candies. Allow to cool to room temperature before removing from waxed paper, and storing in an airtight container.</p>
+              </div>
+
+              <div class="Dessert" id="listrecipe">
+                <h4 id="foodname"> Cheesecake </h4>
+                <h5> Description: </h5>
+                <p>A simple cream cheese pie baked in a graham cracker crust and topped with succulent strawberries and blueberries.</p>
+                <img id="foodpic" src="uploads/cheesecake.jpeg"/>
+                <h5>Category:</h5>
+                <p>Dessert</p>
+                <h5>Ingredients:</h5>
+                <p>1 (9 inch) graham cracker crust, 1 (8 ounce) package cream cheese,1 cup white sugar, ½ cup confectioners' sugar, 1 cup sour cream, ¼ cup milk, 2 teaspoons vanilla extract, 3 eggs, 1 cup sour cream, ¼ cup confectioners' sugar, 1 teaspoon vanilla extract, 1 ½ cups fresh strawberries, halved, 1 cup fresh blueberries, 1 cup strawberry glaze</p>
+                <h5>Instructions:</h5>
+                <p>1.) Preheat oven to 350 degrees F (175 degrees C.) <br> 2.) In a large bowl, beat the cream cheese, white sugar and 1/2 cup confectioners sugar until smooth. Beat in 1 cup sour cream, milk and 1 teaspoon vanilla. Slowly beat in eggs, one at a time. Pour filling into crust. <br> 3.) Bake in the preheated oven for 25 minutes, or until filling is set. Cool for 20 minutes. Preheat oven to 425 degrees F (220 degrees C.) <br> 4.) In a small bowl, combine 1 cup sour cream, 1/4 cup confectioners' sugar and 1 teaspoon vanilla. Mix until smooth, then spread over cheesecake. Bake in preheated oven for 5 minutes. Allow to cool, then refrigerate for at least 1 hour. <br> 5.) Arrange strawberries and blueberries on top of the cheesecake. Spoon strawberry glaze over berries. Refrigerate several hours before serving. </p>
+              </div>
+
+              <div class="Lunch" id="listrecipe">
+                <h4 id="foodname"> Magnificent Macaroni Salad </h4>
+                <h5> Description: </h5>
+                <p>Slightly sweet, classic macaroni salad recipe!</p>
+                <img id="foodpic" src="uploads/macaroni-salad.jpg"/>
+                <h5>Category:</h5>
+                <p>Lunch</p>
+                <h5>Ingredients:</h5>
+                <p>3 cups elbow macaroni, 1 ½ cups mayonnaise, ⅓ large onion, minced, ¼ cup chopped fresh parsley, 2 tablespoons prepared yellow mustard, 2 teaspoons rice vinegar, 1 teaspoon white sugar, or more to taste, ¾ teaspoon celery seed, ½ teaspoon salt, 3 hard-cooked eggs, chopped</p>
+                <h5>Instructions:</h5>
+                <p>1.) Bring a large pot of lightly salted water to a boil. Cook elbow macaroni in the boiling water, stirring occasionally, until cooked through but firm to the bite, 8 minutes; drain. <br> 2.) Rinse macaroni in cold water until cool; drain. <br> 3.) Stir mayonnaise, onion, parsley, mustard, rice vinegar, sugar, celery seed, and salt together in a bowl; add macaroni and eggs and stir to coat. <br> 4.) Chill in refrigerate for 30 minutes before serving. </p>
+              </div>
+
+              <div class="Beverage" id="listrecipe">
+                <h4 id="foodname"> Traditional Chai Tea </h4>
+                <h5> Description: </h5>
+                <p>Kinza's authentic Pakistani Chai is rich and milky, deeply coloured, steaming hot, and boldly flavourful. </p>
+                <img id="foodpic" src="uploads/chai.jpg"/>
+                <h5>Category:</h5>
+                <p>Beverage</p>
+                <h5>Ingredients:</h5>
+                <p>8 oz water, 4 oz whole milk, granulated sugar to taste (about 2 heaped teaspoons per serving, traditionally), 1 heaping tablespoon of black tea empty out tea bags to make a tablespoon if you don't buy loose leaves. Optional: 4 cardamom pods smashed with side of a knife, small piece of cinnamon stick, 1/4 " coin of fresh ginger, pinch of fennel seeds about 10 seeds</p>
+                <h5>Instructions:</h5>
+                <p>1.) Bring water to a boil in a medium saucepan. Reduce the heat to a low-medium. Add the black tea and let it simmer for 2-3 minutes. <br> 2.) Add in the milk and desired spices. Steep until tea takes on a deep, pinky-tan colour, about 3 minutes, stirring occasionally. The tea will soon boil over, be ready to decrease the heat. Strain into a cup and stir in sugar to taste. </p>
+              </div>
+
+              <div class="Snack" id="listrecipe">
+                <h4 id="foodname"> Caramel Popcorn </h4>
+                <h5> Description: </h5>
+                <p>Great caramel popcorn for any holiday or occasion. If you like chewy popcorn, bake less.</p>
+                <img id="foodpic" src="uploads/Caramel-Popcorn-3.jpg"/>
+                <h5>Category:</h5>
+                <p>Snack</p>
+                <h5>Ingredients:</h5>
+                <p>1 cup butter, 2 cups brown sugar, ½ cup corn syrup, 1 teaspoon salt, ½ teaspoon baking soda, 1 teaspoon vanilla extract, 5 quarts popped popcorn</p>
+                <h5>Instructions:</h5>
+                <p>1.) Preheat oven to 250 degrees F (95 degrees C). Place popcorn in a very large bowl. <br> 2.) In a medium saucepan over medium heat, melt butter. Stir in brown sugar, corn syrup and salt. Bring to a boil, stirring constantly. Boil without stirring 4 minutes. Remove from heat and stir in soda and vanilla. Pour in a thin stream over popcorn, stirring to coat. <br> 3.) Place in two large shallow baking dishes and bake in preheated oven, stirring every 15 minutes, for 1 hour. Remove from oven and let cool completely before breaking into pieces.</p>
+              </div>
+            </div>
+        </div>
+       
+        <div class="Breakfast">
+        </div>
+        
+        <!-- Footer -->
+        <footer> © 2020 Drizzle. Site created by Kinza Haque. Recipes from allrecipes.</footer>
+    </body>
+</html>
+

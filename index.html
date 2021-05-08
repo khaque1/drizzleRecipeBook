@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- Linking CSS and JS files -->
+      <link rel="stylesheet" href="screen.css"></link>
+      <script src="script.js" async></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+      <title>Kinza Haque - Final Project - Drizzle Recipe Book</title>
+    </head>
+    <body>
+
+        <!-- Navigation Bar -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">Breakfast</a>
+          <a href="#">Lunch</a>
+          <a href="#">Dinner</a>
+          <a href="#">Dessert</a>
+          <a href="#">Beverage</a>
+          <a href="#">Snack</a>
+        </div>
+
+        <div id="logonav">
+          <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; Menu</span>
+          <span id="showall" title="Show all recipes!"><a href="showall.html"><img src="images/showall.png"></a></span>
+          <span id="addrecipe" title="Add a new recipe!"><a href="#"> <img src="images/add.png"></a></span>
+          <a href="index.html"><img id="logo" src="images/drizzle logo.png"/></a>
+        </div>
+       
+        <!-- Recipe Form -->
+        <div id="formdiv">
+          <form method="POST" action="/recipes">
+             
+              <div class="container-fluid">
+                  <h3 id="title">Add a new recipe:</h3>
+              <!-- Title -->
+              <div class="form-group">
+                <label for="foodtitle">Title *</label>
+                <input type="name" class="form-control" id="foodtitle" placeholder="Tomato Basil Soup" required>
+              </div>
+              <!-- Description -->
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" class="form-control" id="description" placeholder="Please write a short description of the recipe."></textarea>
+              </div>
+              <!-- Upload a Picture of Recipe -->
+              <div class="form-group">
+                <label for="exampleInputFile">Upload a picture of the recipe:</label>
+                <input type="file" id="inputFile">
+              </div>
+              <!-- Category -->
+              <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="Choose one:">
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="beverage">Beverage</option>
+                  <option value="snack">Snack</option>
+                </select>
+              </div>
+              <!-- Time Required -->
+              <div class="form-group">
+                <label for="time1">Time Required</label>
+                <input type="number" class="form-control" id="time1" placeholder="Hours"> <p>Hours</p>
+                <input type="number" class="form-control" id="time1" placeholder="Minutes"> <p>Minutes</p>
+              </div>
+
+              <div class="form-group">
+                <label for="ingredients">Ingredients:</label>
+                <textarea type="text" class="form-control" id="ingredients" placeholder="Write in the ingredients, separated by a comma. Ex. '2 cans of tomato paste, 1 cup of..'"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="instructions">Instructions:</label>
+                <textarea type="text" class="form-control" id="instructions" placeholder="Write in the instructions in a numeric list. Be sure to include details like time and temperature. Ex. '1.) ... 2.) ...'"></textarea>           
+              </div>
+
+              <p id="help-block"> * Required Field</p>
+
+              <button type="submit" class="btn btn-default" >Submit</button>
+              <button type="reset" class="btn btn-default">Reset</button>
+              </div>
+          </form>
+        </div>
+
+
+        <!-- Footer -->
+        <footer> © 2020 Drizzle. Site created by Kinza Haque. Recipes from allrecipes. </footer>
+    </body>
+</html>
+
